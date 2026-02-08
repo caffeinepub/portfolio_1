@@ -1,0 +1,8 @@
+{
+  "frontend/package.json": "Updated package.json with framer-motion and react-type-animation dependencies added to support the portfolio animations and typing effects.",
+  "frontend/src/App.tsx": "Root application component that renders the Portfolio component as the main view.",
+  "frontend/src/components/Portfolio.tsx": "Complete portfolio single-page application with sections for Home, About, Skills, Projects, Resume, and Contact, featuring custom CSS animations and a native React typing effect component without external animation libraries.",
+  "frontend/README.md": "Comprehensive documentation for local development and Internet Computer deployment, including setup instructions, project structure, and customization guide.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as the portfolio is entirely static with no backend data requirements.",
+  "frontend/src/index.css": "Global styles with OKLCH color system and custom CSS keyframe animations for fade-in, slide-in, and typing cursor effects."
+}

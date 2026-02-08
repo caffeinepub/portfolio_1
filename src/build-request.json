@@ -1,0 +1,108 @@
+{
+  "kind": "build_request",
+  "title": "Deploy unchanged portfolio site based on provided React/Tailwind component",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create the portfolio single-page UI in the React+TypeScript frontend to match the exact structure and content of the user-provided `Portfolio` component (sections: Home, About, Skills, Projects, Resume, Contact), including the same text, links, and section anchors (`#home`, `#about`, etc.) without changing profile content.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "just make the same profile no need to change anything and deploy this portfolio"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page renders a fixed navbar with section links: Home, About, Skills, Projects, Resume, Contact.",
+        "Each section exists with the same headings and paragraphs as provided, and navbar links scroll to the correct section IDs.",
+        "The Contact section includes the same GitHub, LinkedIn, and email links as in the provided code (no content changes).",
+        "The Resume section contains a working download link to `/resume.pdf` (file may be added separately)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add and configure required frontend dependencies to support the provided UI code: Framer Motion animations, TypeAnimation typing effect, and Lucide icon components; ensure the build compiles successfully under the existing React+TypeScript template.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "import { motion } from \"framer-motion\";",
+          "import { TypeAnimation } from \"react-type-animation\";",
+          "import { Github, Linkedin, Mail } from \"lucide-react\";"
+        ]
+      },
+      "acceptanceCriteria": [
+        "`npm run build` (or the project’s equivalent) succeeds without TypeScript errors.",
+        "Animations (Framer Motion) and typing effect (TypeAnimation) render in the browser.",
+        "Lucide icons render for GitHub/LinkedIn/Mail in the Contact section."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Ensure static asset support for the resume download by serving `resume.pdf` from the frontend public/static assets path such that it is accessible at `/resume.pdf` in the deployed app.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Place your resume file as `resume.pdf` inside the `public` folder (public/resume.pdf)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When `resume.pdf` is present in the frontend public assets, navigating to `/resume.pdf` works in local and deployed environments.",
+        "Clicking “Download Resume” opens/downloads the PDF in a new tab as coded."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Deploy the portfolio application to the Internet Computer using the project’s standard dfx workflow (build frontend + deploy canisters) and provide a short set of deployment instructions in a README for reproducing the deployment.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "deploy this portfolio"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A `dfx deploy` workflow produces an accessible frontend canister URL that serves the portfolio SPA.",
+        "README includes the minimal steps/commands to run locally and deploy (e.g., install deps, start local replica, deploy).",
+        "No backend features beyond template defaults are required to view the portfolio."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change the profile content, project descriptions, section titles, or links from what the user provided.",
+    "Do not edit files under `frontend/src/components/ui`, `frontend/src/hooks/useInternetIdentity.ts`, `frontend/src/hooks/useInternetIdentity.tsx`, `frontend/src/hooks/useActor.ts`, or `frontend/src/main.tsx` (compose around them instead).",
+    "Backend must remain a single Motoko actor; do not introduce additional backend services or external databases.",
+    "No third-party auth providers; only Internet Identity is supported (and not required for this portfolio)."
+  ],
+  "nonGoals": [
+    "Adding a CMS/admin editor for portfolio content.",
+    "Adding new sections/features not present in the provided component (e.g., blog, testimonials, analytics).",
+    "Deploying to Vercel/Netlify/AWS or any non-Internet-Computer hosting.",
+    "Implementing contact form submission/email sending (mailto link only)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

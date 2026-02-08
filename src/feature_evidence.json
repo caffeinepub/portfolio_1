@@ -1,0 +1,78 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-the-portfolio-single-page-ui-in-the-react-typescript-frontend-to-match-the-exact-structure-and-content-of-the-user-provided-portfolio-component-sections-home-about-skills-projects-resume-contact-including-the-same-text-links-and-section-anchors-home-about-etc-without-changing-profile-content",
+      "featureTitle": "Create the portfolio single-page UI in the React+TypeScript frontend to match the exact structure and content of the user-provided `Portfolio` component (sections: Home, About, Skills, Projects, Resume, Contact), including the same text, links, and section anchors (`#home`, `#about`, etc.) without changing profile content.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Portfolio.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-and-configure-required-frontend-dependencies-to-support-the-provided-ui-code-framer-motion-animations-typeanimation-typing-effect-and-lucide-icon-components-ensure-the-build-compiles-successfully-under-the-existing-react-typescript-template",
+      "featureTitle": "Add and configure required frontend dependencies to support the provided UI code: Framer Motion animations, TypeAnimation typing effect, and Lucide icon components; ensure the build compiles successfully under the existing React+TypeScript template.",
+      "files": [
+        "frontend/src/components/Portfolio.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-static-asset-support-for-the-resume-download-by-serving-resume-pdf-from-the-frontend-public-static-assets-path-such-that-it-is-accessible-at-resume-pdf-in-the-deployed-app",
+      "featureTitle": "Ensure static asset support for the resume download by serving `resume.pdf` from the frontend public/static assets path such that it is accessible at `/resume.pdf` in the deployed app.",
+      "files": [
+        "frontend/src/components/Portfolio.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-deploy-the-portfolio-application-to-the-internet-computer-using-the-project-s-standard-dfx-workflow-build-frontend-deploy-canisters-and-provide-a-short-set-of-deployment-instructions-in-a-readme-for-reproducing-the-deployment",
+      "featureTitle": "Deploy the portfolio application to the Internet Computer using the project’s standard dfx workflow (build frontend + deploy canisters) and provide a short set of deployment instructions in a README for reproducing the deployment.",
+      "files": [
+        "frontend/README.md"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

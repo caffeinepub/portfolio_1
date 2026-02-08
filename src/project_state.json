@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build and deploy a React/Tailwind portfolio site (Framer Motion + TypeAnimation) with sections Home/About/Skills/Projects/Resume/Contact; keep current profile/content unchanged and deploy the site.",
+  "architectural_notes": [
+    "Resume file must be placed at public/resume.pdf and is served at /resume.pdf for the download link."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-the-portfolio-single-page-ui-in-the-react-typescript-frontend-to-match-the-exact-structure-and-content-of-the-user-provided-portfolio-component-sections-home-about-skills-projects-resume-contact-including-the-same-text-links-and-section-anchors-home-about-etc-without-changing-profile-content",
+      "title": "Create the portfolio single-page UI in the React+TypeScript frontend to match the exact structure and content of the user-provided `Portfolio` component (sections: Home, About, Skills, Projects, Resume, Contact), including the same text, links, and section anchors (`#home`, `#about`, etc.) without changing profile content.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-configure-required-frontend-dependencies-to-support-the-provided-ui-code-framer-motion-animations-typeanimation-typing-effect-and-lucide-icon-components-ensure-the-build-compiles-successfully-under-the-existing-react-typescript-template",
+      "title": "Add and configure required frontend dependencies to support the provided UI code: Framer Motion animations, TypeAnimation typing effect, and Lucide icon components; ensure the build compiles successfully under the existing React+TypeScript template.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-static-asset-support-for-the-resume-download-by-serving-resume-pdf-from-the-frontend-public-static-assets-path-such-that-it-is-accessible-at-resume-pdf-in-the-deployed-app",
+      "title": "Ensure static asset support for the resume download by serving `resume.pdf` from the frontend public/static assets path such that it is accessible at `/resume.pdf` in the deployed app.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-deploy-the-portfolio-application-to-the-internet-computer-using-the-project-s-standard-dfx-workflow-build-frontend-deploy-canisters-and-provide-a-short-set-of-deployment-instructions-in-a-readme-for-reproducing-the-deployment",
+      "title": "Deploy the portfolio application to the Internet Computer using the project’s standard dfx workflow (build frontend + deploy canisters) and provide a short set of deployment instructions in a README for reproducing the deployment.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Deploy the portfolio website (e.g., to Vercel/Netlify) without changing the existing profile/content",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Portfolio",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

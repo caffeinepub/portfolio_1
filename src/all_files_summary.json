@@ -1,0 +1,17 @@
+{
+  "backend/main.mo": "Minimal Motoko canister with an empty actor.",
+  "feature_evidence.json": "Structured feature evidence report mapping features to files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Text file listing brief summaries for key frontend files and their roles.",
+  "frontend/index.css": "Tailwind base setup with theme variables and styling defaults for light/dark modes.",
+  "frontend/index.html": "Basic HTML entry point mounting the React app and loading main.tsx.",
+  "frontend/README.md": "Documentation for running, developing, and deploying the portfolio on the Internet Computer.",
+  "frontend/src/App.tsx": "Wraps and renders the Portfolio component as the root view.",
+  "frontend/src/components/Portfolio.tsx": "Full single‑page portfolio UI with sections, navigation, animations, and contact links.",
+  "frontend/src/hooks/useActor.ts": "React hook creating and managing an authenticated or anonymous backend actor using react-query.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for Internet Identity login, identity persistence, and status management.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder since the app has no backend queries.",
+  "frontend/src/index.css": "Tailwind config plus custom animation keyframes and utility classes for UI effects.",
+  "frontend/src/main.tsx": "App bootstrap configuring React Query, Internet Identity provider, and rendering the app.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom theming, color variables, animations, and plugins for typography, container queries, and animations.",
+  "project_state.json": "Defines the project’s current state, features, and deployment requirements for a React/Tailwind portfolio site with static resume support."
+}

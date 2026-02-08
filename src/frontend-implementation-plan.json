@@ -1,0 +1,86 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Deploy unchanged portfolio SPA (React + Tailwind)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement the portfolio single-page UI to exactly match the provided `Portfolio` component structure/content with anchored sections and fixed navbar.",
+      "acceptanceCriteria": [
+        "Landing page renders a fixed navbar with section links: Home, About, Skills, Projects, Resume, Contact.",
+        "Each section exists with the same headings and paragraphs as provided, and navbar links scroll to the correct section IDs.",
+        "The Contact section includes the same GitHub, LinkedIn, and email links as in the provided code (no content changes).",
+        "The Resume section contains a working download link to `/resume.pdf` (file may be added separately)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Portfolio.tsx",
+          "operation": "create",
+          "description": "Create the `Portfolio` component by transcribing the user-provided code exactly (same sections, headings, text, links, and anchor IDs like `#home`, `#about`, etc.) and keep all profile content unchanged. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Render the `Portfolio` component as the app’s primary view (SPA). Ensure any navigation/wiring needed so the fixed navbar and section anchors work as in the provided component. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add and configure frontend dependencies required by the provided UI code (Framer Motion, TypeAnimation, Lucide) so the app compiles and renders animations/icons.",
+      "acceptanceCriteria": [
+        "`npm run build` (or the project’s equivalent) succeeds without TypeScript errors.",
+        "Animations (Framer Motion) and typing effect (TypeAnimation) render in the browser.",
+        "Lucide icons render for GitHub/LinkedIn/Mail in the Contact section."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/package.json",
+          "operation": "create",
+          "description": "Add required dependencies for the provided UI code: `framer-motion`, `react-type-animation`, and `lucide-react`, keeping the existing React+TypeScript template setup intact so builds succeed."
+        },
+        {
+          "path": "frontend/src/components/Portfolio.tsx",
+          "operation": "modify",
+          "description": "Wire imports/usages for Framer Motion, TypeAnimation, and Lucide icons exactly as in the provided component code. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Ensure the resume PDF is served as a static asset at `/resume.pdf` and the UI download link works as coded.",
+      "acceptanceCriteria": [
+        "When `resume.pdf` is present in the frontend public assets, navigating to `/resume.pdf` works in local and deployed environments.",
+        "Clicking “Download Resume” opens/downloads the PDF in a new tab as coded."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/resume.pdf",
+          "operation": "create",
+          "description": "Add a `resume.pdf` file under frontend public assets so it is served at `/resume.pdf` (may be a placeholder that the user replaces)."
+        },
+        {
+          "path": "frontend/src/components/Portfolio.tsx",
+          "operation": "modify",
+          "description": "Ensure the Resume section’s download link points to `/resume.pdf` and opens/downloads in a new tab as in the provided code, without changing any surrounding text/content. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Provide reproducible Internet Computer deployment instructions using the standard dfx workflow, without requiring backend features beyond template defaults.",
+      "acceptanceCriteria": [
+        "A `dfx deploy` workflow produces an accessible frontend canister URL that serves the portfolio SPA.",
+        "README includes the minimal steps/commands to run locally and deploy (e.g., install deps, start local replica, deploy).",
+        "No backend features beyond template defaults are required to view the portfolio."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/README.md",
+          "operation": "create",
+          "description": "Document minimal local run + Internet Computer deployment steps using the project’s standard dfx workflow (install deps, start replica, build, deploy, and how to access the frontend canister URL). Keep instructions focused on deploying/viewing the portfolio SPA."
+        }
+      ]
+    }
+  ]
+}
